@@ -1,5 +1,5 @@
 
- 🧠 Projeto: Sistema Analítico de Anomalias em Transações Bancárias
+ 🧠 Sistema Analítico de Anomalias em Transações Bancárias
  
 Este projeto simula o processo completo de desenvolvimento de um sistema de detecção de anomalias em transações financeiras, com foco em engenharia de variáveis, modelagem de regras heurísticas, visualização de métricas de performance e prototipagem de soluções baseadas em dados.
 
