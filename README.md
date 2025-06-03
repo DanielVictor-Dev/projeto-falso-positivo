@@ -18,6 +18,7 @@ O objetivo é demonstrar competências fundamentais de um Cientista de Dados Jú
 - Visualizar padrões, alertas e trade-offs em um ambiente simulado
 
 📚 Principais Habilidades Demonstradas
+
 Simulação e análise de dados transacionais
 
 Criação de features derivadas do contexto (tempo, localização, canal, etc.)
@@ -32,57 +33,60 @@ Visualização e interpretação dos resultados para tomada de decisão
 
 🛠️ Metodologia
 
-Simulação de Dados
-Dataset com 10.000 transações fictícias
+ Simulação de Dados
+ 
+- Dataset com 10.000 transações fictícias
 
-Variáveis: valor, data/hora, canal, localização, dispositivo, ID do usuário
+- Variáveis: valor, data/hora, canal, localização, dispositivo, ID do usuário
 
-Inserção controlada de padrões anômalos (~2% de fraudes)
+- Inserção controlada de padrões anômalos (~2% de fraudes)
 
-Outliers simulados com horários incomuns, valores extremos e trocas bruscas de canal/dispositivo
+- Outliers simulados com horários incomuns, valores extremos e trocas bruscas de canal/dispositivo
 
 Engenharia de Features (features.py)
-Extração de variáveis contextuais como:
 
-Hora da transação
+- Extração de variáveis contextuais como:
 
-Frequência de transações por hora/dia
+- Hora da transação
 
-Distância geográfica entre transações consecutivas
+- Frequência de transações por hora/dia
 
-Mudanças súbitas de canal ou dispositivo
+- Distância geográfica entre transações consecutivas
 
-Features construídas com foco em comportamento do usuário ao longo do tempo
+- Mudanças súbitas de canal ou dispositivo
+
+- Features construídas com foco em comportamento do usuário ao longo do tempo
 
 Sistema de Regras (regras.py)
-Regras heurísticas baseadas nas features derivadas:
 
-Transação em horário atípico
+- Regras heurísticas baseadas nas features derivadas:
 
-Valor acima da média histórica do usuário
+- Transação em horário atípico
 
-Localização incompatível com transações anteriores
+- Valor acima da média histórica do usuário
 
-Mudança abrupta de dispositivo ou canal
+- Localização incompatível com transações anteriores
+
+- Mudança abrupta de dispositivo ou canal
 
 Cada regra gera uma pontuação de risco agregada para posterior análise
 
 Avaliação de Performance
 Métricas utilizadas:
 
-Precisão (Precision)
+- Precisão (Precision)
 
-Revocação (Recall)
+- Revocação (Recall)
 
-Matriz de confusão
+- Matriz de confusão
 
 Visualizações:
 
-Score de risco vs. transações rotuladas
+- Score de risco vs. transações rotuladas
 
-Distribuição de alertas por regras acionadas
+- Distribuição de alertas por regras acionadas
 
-Curva de trade-off entre recall e falsos positivos
+- Curva de trade-off entre recall e falsos positivos
 
 📊 Principais Resultados
 
