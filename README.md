@@ -157,9 +157,23 @@ Interpretação clara dos resultados para comunicação com áreas não técnica
 👨‍💻 Sobre o Autor
 
 Daniel Victor Simões Neves
+Cientista de Dados em formação | Entusiasta de Análise Comportamental, Engenharia de Features e Sistemas Inteligentes
 
-Estudante de Ciência de Dados | Focado em Prevenção a Fraudes, AML, e Machine Learning
-Com este projeto, Daniel mostra domínio prático em engenharia de dados, lógica de negócio antifraude e habilidades que se alinham diretamente às demandas de empresas que valorizam segurança, inteligência e experiência do cliente.
+Daniel é estudante de Ciência de Dados com foco em resolver problemas de negócio por meio de análise exploratória, modelagem analítica e prototipagem de soluções com dados. Neste projeto, demonstra domínio em:
+
+Simulação e estruturação de dados transacionais
+
+Engenharia de variáveis baseada em contexto
+
+Desenvolvimento de sistemas interpretáveis com lógica de negócio
+
+Avaliação de modelos por métricas e visualizações
+
+Organização modular de projetos em Python
+
+Seu portfólio reflete uma abordagem prática, centrada em transformar dados brutos em insights acionáveis — aplicável a diversas indústrias, como finanças, varejo, marketing ou operações.
+
+
 
 📧 LinkedIn - https://www.linkedin.com/in/daniel-victor-/
 
