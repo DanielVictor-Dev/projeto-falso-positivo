@@ -1,146 +1,150 @@
 
- 🛡️ Projeto: O Dilema do Falso Positivo – Sistema de Prevenção a Fraudes
+ 🧠 Projeto: Sistema Analítico de Anomalias em Transações Bancárias
+ 
+Este projeto simula o processo completo de desenvolvimento de um sistema de detecção de anomalias em transações financeiras, com foco em engenharia de variáveis, modelagem de regras heurísticas, visualização de métricas de performance e prototipagem de soluções baseadas em dados.
 
-Este projeto simula um cenário real enfrentado diariamente por analistas de prevenção a fraudes: o dilema entre bloquear transações suspeitas (correndo o risco de frustrar clientes legítimos) ou deixar transações potencialmente fraudulentas passarem (assumindo risco financeiro).
+O objetivo é demonstrar competências fundamentais de um Cientista de Dados Júnior em ambientes de negócios reais — como bancos digitais, fintechs ou e-commerces — ao construir um sistema interpretável e de rápida iteração.
 
-Criado por Daniel Victor Simões Neves, este projeto faz parte de seu portfólio profissional como entusiasta em fraudes, machine learning e user experience. Ele foi desenvolvido para demonstrar competências essenciais exigidas por empresas que atuam com prevenção a fraudes em fintechs, bancos digitais e e-commerces.
+🎯 Objetivos Técnicos
 
----
+- Simular uma base de dados realista com comportamento de usuários financeiros
 
-🎯 Objetivos do Projeto
+- Aplicar técnicas de engenharia de features contextuais
 
-• Simular uma base de transações bancárias realistas
-• Engenhar variáveis contextuais a partir das transações
-• Desenvolver um sistema de alertas baseado em regras de negócio
-• Avaliar a performance do sistema utilizando métricas clássicas de detecção de fraudes
-• Visualizar os resultados e scores de risco comparados à fraude real
+- Implementar um sistema de pontuação baseado em regras de negócio
 
----
+- Avaliar a performance das regras com métricas de classificação
 
-🧠 Problema: O Falso Positivo
-Na detecção de fraudes, um dos principais desafios é o falso positivo:
-Classificar como fraude uma transação que na verdade é legítima.
+- Visualizar padrões, alertas e trade-offs em um ambiente simulado
 
-• 🔒 Bloquear um cliente legítimo = perda de confiança e churn
-• 💸 Deixar passar uma fraude real = prejuízo financeiro
+📚 Principais Habilidades Demonstradas
+Simulação e análise de dados transacionais
 
-Este projeto aborda este dilema propondo uma análise contextual do comportamento do usuário, sem depender inicialmente de algoritmos de machine learning.
+Criação de features derivadas do contexto (tempo, localização, canal, etc.)
 
----
+Desenvolvimento de sistemas de pontuação baseados em lógica de negócio
 
-🧠 Conceitos Envolvidos
+Avaliação de sistemas classificadores com métricas como precisão, revocação e matriz de confusão
 
-- Falso Positivo: quando uma transação legítima é classificada como fraude
-- Features Contextuais: tempo, canal, dispositivo, localização, valor
-- Sistema de Regras: lógica de negócio que simula alertas em tempo real
-- Análise de Performance: recall, precisão, acurácia, matriz de confusão
+Organização modular do código em Python
 
----
+Visualização e interpretação dos resultados para tomada de decisão
 
 🛠️ Metodologia
 
-1. Simulação de Dados
-   • Dataset com 10.000 transações
-   • Variáveis: valor, data/hora, canal, localização, dispositivo, ID do usuário
-   • 2% das transações marcadas como fraudulentas
-   • Simulação inclui outliers de valor e horários suspeitos
+Simulação de Dados
+Dataset com 10.000 transações fictícias
 
----
+Variáveis: valor, data/hora, canal, localização, dispositivo, ID do usuário
 
-2. Engenharia de Features (arquivo features.py)
+Inserção controlada de padrões anômalos (~2% de fraudes)
 
-• Criação de variáveis como:
-o Hora da transação
-o Transações por hora/dia por usuário
-o Distância geográfica entre transações
-o Troca de dispositivo/canal
-• Essas features ajudam a entender comportamentos atípicos
+Outliers simulados com horários incomuns, valores extremos e trocas bruscas de canal/dispositivo
 
----
+Engenharia de Features (features.py)
+Extração de variáveis contextuais como:
 
-3. Sistema de Regras (arquivo regras.py)
+Hora da transação
 
-• Regras heurísticas desenvolvidas com base nas features criadas:
-o Transação em horário incomum
-o Valor muito acima da média
-o Geolocalização incompatível com histórico
-o Mudança abrupta de canal ou dispositivo
-• Cada regra contribui com um score de risco
-• Geração de alertas com base no score final
+Frequência de transações por hora/dia
 
----
+Distância geográfica entre transações consecutivas
 
-4. Análise de Performance
+Mudanças súbitas de canal ou dispositivo
 
-• Métricas utilizadas:
-o Precisão (Precision)
-o Revocação (Recall)
-o Matriz de confusão
-• Visualização da relação entre score de risco e transações fraudulentas reais
+Features construídas com foco em comportamento do usuário ao longo do tempo
 
----
+Sistema de Regras (regras.py)
+Regras heurísticas baseadas nas features derivadas:
+
+Transação em horário atípico
+
+Valor acima da média histórica do usuário
+
+Localização incompatível com transações anteriores
+
+Mudança abrupta de dispositivo ou canal
+
+Cada regra gera uma pontuação de risco agregada para posterior análise
+
+Avaliação de Performance
+Métricas utilizadas:
+
+Precisão (Precision)
+
+Revocação (Recall)
+
+Matriz de confusão
+
+Visualizações:
+
+Score de risco vs. transações rotuladas
+
+Distribuição de alertas por regras acionadas
+
+Curva de trade-off entre recall e falsos positivos
 
 📊 Principais Resultados
-• O sistema baseado em regras simples foi capaz de capturar boa parte das transações fraudulentas com alta taxa de recall.
-• A análise visual mostrou que scores mais altos estão de fato associados às fraudes.
-• Identificamos também falsos positivos, reforçando o desafio de calibrar regras para minimizar atrito com clientes.
-• O sistema serviu como uma prova de conceito, mostrando que é possível gerar inteligência mesmo sem algoritmos complexos.
 
----
+- O sistema foi capaz de identificar com eficácia comportamentos atípicos nas transações
 
-## 🗂️ Estrutura do Projeto
+- A análise visual mostrou forte correlação entre score de risco e transações anômalas
 
-```
-fraude-falso-positivo/
+- Foram identificados falsos positivos, reforçando a importância de balanceamento entre precisão e cobertura
+
+- O projeto demonstra como é possível gerar valor com modelos simples, interpretáveis e de rápida implementação
+
+🗂️ Estrutura do Projeto
+bash
+Copiar
+Editar
+analise-transacoes/
 │
 ├── data/                  # Dataset simulado (transacoes.csv)
 │
-├── notebooks/             # Etapas do projeto
-│   └── 01_EDA.ipynb            → Análise exploratória
-│   └── 02_Regras.ipynb         → Aplicação das regras
+├── notebooks/             # Jupyter Notebooks com as etapas do projeto
+│   ├── 01_EDA.ipynb            → Análise exploratória dos dados
+│   ├── 02_Regras.ipynb         → Aplicação das regras heurísticas
 │   └── 03_Visualizacoes.ipynb  → Avaliação visual dos resultados
 │
 ├── src/
-│   └── features.py        # Funções de engenharia de variáveis
-│   └── regras.py          # Regras de negócio para scoring
+│   ├── features.py         # Funções para engenharia de variáveis
+│   └── regras.py           # Regras de negócio e pontuação de risco
 │
-├── requirements.txt       # Dependências do projeto
-└── README.md              # Documentação do projeto
+├── requirements.txt        # Bibliotecas necessárias
+└── README.md               # Documentação do projeto
+🚀 Como Executar o Projeto
+Clone este repositório:
 
-```
+bash
+Copiar
+Editar
+git clone https://github.com/seu-usuario/analise-transacoes.git
+Instale as dependências:
 
----
-
-## 🚀 Como rodar o projeto
-
-1. Clone este repositório:
-
-```
-git clone https://github.com/seu-usuario/fraude-falso-positivo.git
-```
-
-2. Instale as dependências:
-
-```
+bash
+Copiar
+Editar
 pip install -r requirements.txt
-```
+Execute os notebooks em sequência na pasta notebooks/.
 
-3. Execute os notebooks na pasta `notebooks/` na ordem 01 → 03.
+📎 Tecnologias Utilizadas
+Python (Pandas, NumPy)
 
----
+Visualização com Seaborn e Matplotlib
 
-## 📊 Exemplos de Outputs
+Jupyter Notebook
 
-- Score de risco vs. fraude real
-- Matriz de confusão da regra
-- Análise de variáveis com mais impacto em alertas
+Git & GitHub
 
----
+✅ Diferenciais do Projeto
+Foco em pipeline completo de ciência de dados, desde simulação até visualização
 
-🧪 Tecnologias Utilizadas
-• Python (Pandas, NumPy, Matplotlib, Seaborn)
-• Jupyter Notebooks
-• Git & GitHub
+Código modular e reutilizável em diferentes cenários de negócio
+
+Interpretação clara dos resultados para comunicação com áreas não técnicas
+
+
 
 ---
 
